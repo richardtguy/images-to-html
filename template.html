@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assets</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Serial Number</th>
+                <th>Location</th>
+                <th>Tags</th>
+                <th>Notes</th>
+                <th>Images</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asset in assets %}
+            <tr>
+                <td>{{ asset['Asset ID'] }}</td>
+                <td>{{ asset['Location'] }}</td>
+                <td>{{ asset['Tags'] }}</td>
+                <td>{{ asset['Notes'] }}</td>
+                <td>
+                {% for image in asset['images'] %}
+                    <a href="{{ image['Image'] }}" target="_blank"><img src="{{ image['Image'] }}" width="400"></a>
+                {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

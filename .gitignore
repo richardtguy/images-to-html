@@ -1,0 +1,6 @@
+/venv/
+/images*/
+/Images*/
+/output.html
+*.csv
+.DS_Store
